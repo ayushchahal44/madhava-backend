@@ -20,10 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const corsOptions = {
-  origin: ['https://madhava-shreekrishna.netlify.app', 'http://localhost:3000'],
+  origin: [process.env.CLIENT_URL, 'http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
 };
 
 app.use(cors(corsOptions));
